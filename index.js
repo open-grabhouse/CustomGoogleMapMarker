@@ -18,7 +18,7 @@ CustomMarker.prototype.draw = function() {
 
         div.innerHTML = '<div class="marker-wrap"><div class="marker-inner"><img class="img-marker-' + this.args.marker_id +'" style="display:' + this.args.imgStyle + ';" alt="" src="' + this.args.type + '" />' +
         '<div class="marker-content">' +
-        '<img src=\"'+this.args.photo_url+ '\"/>'+
+        '<img class="listImg" src="" data-src=\"'+this.args.photo_url+ '\" width="80" height="60" />'+
         '<div class="marker-details">' +
         '<div class="marker-head">'+this.args.title+ '</div>' +
         '<div class="marker-rent"><span>Rs. ' + this.args.rent +'</span> per month</div>'+
@@ -33,7 +33,7 @@ CustomMarker.prototype.draw = function() {
 
         div.addEventListener("mousedown", this.clickfunc);
         div.addEventListener("mouseout", this.mouseoutfunc);
-        div.addEventListener("mouseover", this.hoverfunc());
+        div.addEventListener("mouseover", this.hoverfunc);
 
         var panes = this.getPanes();
         panes.overlayImage.appendChild(div);
