@@ -21,7 +21,7 @@ CustomMarker.prototype.draw = function() {
         '<img class="listImg" src="" data-src=\"'+this.args.photo_url+ '\" width="80" height="60" />'+
         '<div class="marker-details">' +
         '<div class="marker-head">'+this.args.title+ '</div>' +
-        '<div class="marker-rent"><span>Rs. ' + this.args.rent +'</span> per month</div>'+
+        '<div class="marker-rent"><span>Rs. ' + this.args.rent +'</span> <span>'+this.args.rentTag+'</span></div>'+
         '<div class="hr-line"></div>'+
         '<div class="marker-address">'+this.args.location+'</div></div></div></div></div>';
 
