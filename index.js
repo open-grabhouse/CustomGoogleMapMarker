@@ -11,14 +11,14 @@ CustomMarker.prototype.draw = function() {
     var self = this;
 
     var div = this.div;
-
+    
     if (!div) {
-
+        
         div = this.div = document.createElement('div');
 
         div.innerHTML = '<div class="marker-wrap"><div class="marker-inner"><img class="img-marker-' + this.args.marker_id +'" style="display:' + this.args.imgStyle + ';" alt="" src="' + this.args.type + '" />' +
         '<div class="marker-content">' +
-        '<img class="listImg" src="" data-src=\"'+this.args.photo_url+ '\" width="80" height="60" />'+
+        '<img id="' + this.args.marker_id + '_listImg" class="_listImg" src="" data-src=\"'+this.args.photo_url+ '\" width="80" height="60" />'+
         '<div class="marker-details">' +
         '<div class="marker-head">'+this.args.title+ '</div>' +
         '<div class="marker-rent"><span>Rs. ' + this.args.rent +'</span> <span>'+this.args.rentTag+'</span></div>'+
@@ -26,7 +26,7 @@ CustomMarker.prototype.draw = function() {
         '<div class="marker-address">'+this.args.location+'</div></div></div></div></div>';
 
         div.className = 'marker marker-' + this.args.marker_id;
-
+        div.id = this.args.marker_id;
         //if (typeof(self.args.marker_id) !== 'undefined') {
         //    div.dataset.marker_id = self.args.marker_id;
         //}
